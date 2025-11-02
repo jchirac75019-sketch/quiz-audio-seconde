@@ -1,7 +1,7 @@
 {
   "id": "quran-quiz-app",
-  "name": "Quran Interactive Quiz Application",
-  "short_name": "Quiz Coran",
+  "name": "صوت الحق2 (إدريس بن صالح)",
+  "short_name": "صوت الحق2",
   "description": "Interactive Quranic verse quiz with audio, scoring, and Arabic support. Available on Windows, Android, and iOS.",
   "start_url": "/quiz-audio-seconde/",
   "scope": "/quiz-audio-seconde/",
