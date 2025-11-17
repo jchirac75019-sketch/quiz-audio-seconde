@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- ========== ENCODAGE - CHARACTER ENCODING ========== -->
     <meta charset="UTF-8">
+    
+    <!-- ========== VIEWPORT - MOBILE CONFIGURATION ========== -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Manifest pour Android et Web -->
+    <!-- ========== SERVICE WORKER REGISTRATION - PWA OFFLINE ==========
+         Enregistre le Service Worker pour fonctionnement hors ligne
+    ========== -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(() => {
+          console.log('✅ Service Worker enregistré avec succès');
+        }).catch(err => {
+          console.error('⚠️ Erreur enregistrement Service Worker:', err);
+        });
+      }
+    </script>
+    
+    <!-- ========== MANIFEST POUR PWA - APP INSTALLATION ==========
+         Permet installation comme app native sur téléphone + ordinateur
+    ========== -->
     <link rel="manifest" href="/quiz-audio-seconde/manifest.json">
     
-    <!-- Configuration pour Windows -->
+    <!-- ========== CONFIGURATION WINDOWS - WINDOWS TILE ==========
+         Pour l'épingle au menu Démarrer sur Windows
+    ========== -->
     <meta name="msapplication-config" content="/quiz-audio-seconde/browserconfig.xml">
     <meta name="msapplication-TileColor" content="#1976d2">
-    <meta name="msapplication-TileImage" content="/quiz-audio-seconde/images/icon-windows-144.png">
+    <meta name="msapplication-TileImage" content="/quiz-audio-seconde/images/icon-192.png">
     
-    <!-- Configuration pour Android -->
+    <!-- ========== CONFIGURATION ANDROID - ANDROID APP ==========
+         Couleur thème pour Android + capacités web app
+    ========== -->
     <meta name="theme-color" content="#1976d2">
     <meta name="mobile-web-app-capable" content="yes">
     
-    <!-- Configuration pour iOS/Apple -->
+    <!-- ========== CONFIGURATION iOS/APPLE - iOS APP ==========
+         Support pour iOS et macOS
+    ========== -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="اختبار آيات القرآن">
-    <link rel="apple-touch-icon" href="/quiz-audio-seconde/images/icon-apple-180.png">
+    <link rel="apple-touch-icon" href="/quiz-audio-seconde/images/icon-192.png">
     
-    <!-- Favicon standard -->
-    <link rel="icon" href="/quiz-audio-seconde/images/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/quiz-audio-seconde/images/favicon-192.png" sizes="192x192" type="image/png">
-    <link rel="icon" href="/quiz-audio-seconde/images/favicon.svg" type="image/svg+xml">
+    <!-- ========== FAVICON & ICÔNES - ICONS & FAVICON ==========
+         Références aux icônes pour différents appareils
+    ========== -->
+    <link rel="icon" href="/quiz-audio-seconde/images/icon-192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="/quiz-audio-seconde/images/icon-512.png" sizes="512x512" type="image/png">
     
-    <!-- Favicon de secours (SVG inline) -->
+    <!-- Favicon SVG inline (secours) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
     
+    <!-- ========== TITRE DE PAGE - PAGE TITLE ========== -->
     <title>اختبار آيات القرآن الكريم</title>
     
+    <!-- ========== STYLES INLINE - INLINE STYLES (ORIGINAL PRESERVED) ==========
+         Tous les styles CSS originaux conservés intégralement
+    ========== -->
     <style>
 
         * {
@@ -66,7 +95,7 @@
 
         .header {
              text-align: center;
-             margin-bottom: 10px;      /* réduire l’espacement sous le header */
+             margin-bottom: 10px;      /* réduire l'espacement sous le header */
              padding: 5px 0;          /* diminuer la hauteur interne (au lieu de 40px précédemment) */
              color: white;
         }
@@ -244,7 +273,7 @@
             background: rgba(255, 255, 255, 0.95);
             padding: 20px;
             border-radius: 12px;
-            margin-bottom: 10px; /* au lieu de 30px, réduit l’espace */
+            margin-bottom: 10px; /* au lieu de 30px, réduit l'espace */
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             flex-wrap: wrap;
             gap: 20px;
@@ -311,7 +340,7 @@
             border-radius: 15px;
             padding: 15px;           /* Réduit de 30px à 15px */
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-top: 10px; /* élimine l’espace par défaut, ajustez si nécessaire */
+            margin-top: 10px; /* élimine l'espace par défaut, ajustez si nécessaire */
         }
 
         .quiz-mode {
@@ -397,7 +426,7 @@
             justify-content: center;
             gap: 8px;               /* Réduit de 15px à 8px */
             margin-top: 2px;        /* Réduit de 20px à 2px */
-            margin-bottom: -10px; /* remonte les boutons par rapport à l’élément suivant */
+            margin-bottom: -10px; /* remonte les boutons par rapport à l'élément suivant */
         }
 
         .verse-info-container.hidden {
@@ -758,7 +787,7 @@
            margin-top: 10px; 
        }
           #verse-audio {
-           margin-bottom: 0;    /* Annule l’espace sous le lecteur audio */
+           margin-bottom: 0;    /* Annule l'espace sous le lecteur audio */
            padding: 0;
        }
           .audio-controls {

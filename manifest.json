@@ -2,14 +2,16 @@
   "id": "quran-quiz-app",
   "name": "صوت الحق2 (إدريس بن صالح)",
   "short_name": "صوت الحق2",
-  "description": "Interactive Quranic verse quiz with audio, scoring, and Arabic support. Available on Windows, Android, and iOS.",
+  "description": "تطبيق متقدم لاختبار القرآن الكريم مع الصوت والنصوص - Interactive Quranic verse quiz with audio, scoring, and Arabic support. V27 - Desktop & Mobile Compatible",
   "start_url": "/quiz-audio-seconde/",
   "scope": "/quiz-audio-seconde/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
-  "theme_color": "#2c5f2d",
+  "theme_color": "#1976d2",
   "prefer_related_applications": false,
+  "lang": "ar",
+  "dir": "rtl",
   "icons": [
     {
       "src": "/quiz-audio-seconde/images/icon-192.png",
@@ -24,13 +26,13 @@
       "purpose": "any"
     },
     {
-      "src": "/quiz-audio-seconde/images/icon-maskable-192.png",
+      "src": "/quiz-audio-seconde/images/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/quiz-audio-seconde/images/icon-maskable-512.png",
+      "src": "/quiz-audio-seconde/images/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -50,5 +52,20 @@
       "form_factor": "wide"
     }
   ],
-  "categories": ["education", "productivity"]
+  "categories": ["education", "productivity", "reference"],
+  "shortcuts": [
+    {
+      "name": "بدء الاختبار",
+      "short_name": "اختبار",
+      "description": "ابدأ اختبار القرآن الكريم فوراً",
+      "url": "/quiz-audio-seconde/?mode=start",
+      "icons": [
+        {
+          "src": "/quiz-audio-seconde/images/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
 }
